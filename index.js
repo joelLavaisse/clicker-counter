@@ -1,8 +1,11 @@
 const express = require('express');
+const sslRedirect = require('heroku-ssl-redirect').default
 var path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(sslRedirect());
 
 app.get('/:folder/:file', (req, res) => {
   res.sendFile(path.join(__dirname + `/${req.params.folder}/${req.params.file}`));
