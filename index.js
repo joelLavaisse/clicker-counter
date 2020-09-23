@@ -21,5 +21,5 @@ app.get('/manifest.json', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log('Node.js web server at port 5000 is running..')
+  console.log(`App is running at port ${port}`)
 });
